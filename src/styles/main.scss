@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;500;900&display=swap');
+
+/* COLORS */
+$codey-background-color: #272822;
+$codey-red-color: #F92672;
+$codey-orange-color: #FD971F;
+$codey-yellow-color: #FFD866;
+$codey-green-color: #A6E22E;
+$codey-blue-color: #66D9EF;
+$codey-purple-color: #AE81FF;
+
+/* FONTS */
+$header-font-stack: 'Bebas Neue', 'Oswald', sans-serif;
+$body-font-stack: 'Roboto', sans-serif;
+
+$h1-font-size: 2rem;
+
+$gutter-size: 2rem;
+
+body, html, * {
+  margin: 0;
+  font-family: $body-font-stack;
+  font-weight: 300;
+}
+
+.codey {
+  background-color: $codey-background-color;
+  color: white;
+  a { 
+    color: $codey-blue-color; 
+    // &:visited {
+    //   color: $codey-purple-color;
+    // }
+  }
+}
+
+
+main {
+  height: 100vh;
+  padding: $gutter-size;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: $gutter-size;
+
+  #logo > a, nav > a {
+    font-family: $header-font-stack;
+    font-size: $h1-font-size;
+    text-decoration: none;
+  }
+  nav > a {
+    &:not(:last-child) {
+      margin-right: $gutter-size;
+    }
+  }
+  &.codey { 
+    #logo > a {
+      color: $codey-red-color;
+    }
+    nav > a {
+      color: $codey-orange-color;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font-stack;
+}
