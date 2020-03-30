@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export const myContext = React.createContext()
 
 const Provider = props => {
-  const [theme, setTheme] = useState("codey")
+  const [theme, setTheme] = useState("")
 
   return (
     <myContext.Provider value={{

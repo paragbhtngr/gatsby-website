@@ -27,13 +27,13 @@ const Layout = ({ children, theme }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} theme={theme}/>
       <div className={theme} >
-        <main>{children}</main>
+        <main>
+          <Header siteTitle={data.site.siteMetadata.title} theme={theme}/>
+          {children}
+        </main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()}, Parag Bhatnagar
         </footer>
       </div>
     </>
