@@ -1,7 +1,8 @@
 ---
-path: "/blog/my-second-post"
+type: "art"
+path: "/art/2"
 date: "2019-05-04"
-title: "My second blog post"
+title: "Art 2"
 ---
 
 Pandas are really sweet.

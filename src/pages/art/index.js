@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../../components/layout"
-import Image from "../../components/image"
 import SEO from "../../components/seo"
 
 import { myContext } from '../../../provider'
@@ -16,31 +15,20 @@ export default function Blog({
     <myContext.Consumer>
       {context => (
         <Layout theme={context.theme}>
-          <SEO title="Blog" />
-          <h1>Random Ramblings about stuff I care about</h1>
-          <div className="blog-posts-container">
+          <SEO title="Art" />
+          <h1>Hi from the about page</h1>
+          <div className="blog-post-container">
             { posts.map(post => {
               return (
                 <>
-                  <div className="blog-card card">
-                    <div className="blog-card-img">
-                      <Image imgName={post.frontmatter.image}/>
-                    </div>
-                    <div className="blog-card-content">
-                      <Link to={post.frontmatter.path} className="blog-title">
-                        {post.frontmatter.title}
-                      </Link>
-                      <br/>
-                      { post.frontmatter.tags && post.frontmatter.tags.map((tag) => {
-                          return(<span class="badge">{tag}</span>)
-                        }) } 
-                    </div>
-                    
+                  <div className="blog-post">
+                    <h2>{post.frontmatter.title}</h2>
                   </div>
                 </>
               )
             })}
           </div>
+          <p>Welcome to page 2</p>
           <Link to="/">Go back to the homepage</Link>
         </Layout>
       )}
@@ -49,10 +37,10 @@ export default function Blog({
 }
 
 export const pageQuery = graphql`
-  query AllBlogPosts {
+  query AllArtPosts {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { type: {eq: "blog"} } }
+      filter: { frontmatter: { type: {eq: "art"} } }
       limit: 1000
     ) {
       edges {
@@ -60,8 +48,6 @@ export const pageQuery = graphql`
           frontmatter {
             title
             path
-            tags
-            image
           }
         }
       }

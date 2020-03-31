@@ -26,8 +26,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 blockquote {
-  border-left: 4px solid grey;
-  padding-left: 2rem;
+  border-left: 0.25rem solid #ccc;
+  margin: 1.5em 0px;
+  color: #999;
+  padding: 0.5em 10px;
+  font-family: "Open Sans", sans-serif;
+  quotes: "“" "”" "‘" "’";
+  p {
+    display: inline;
+  }
+  &:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
   @media screen and (max-width: $break-small) {
     padding-left: 1rem;
   }
@@ -57,21 +72,36 @@ blockquote {
   background-image: $arty-background-image;
   background-repeat: repeat;
   background-size: 500px;
-  color: $arty-black-color;
-  .block {
-    outline: 2px solid grey;
+  h1, h2, h3, h4, h5, h6, p {
+    background: url('../images/pencil.jpg');
+    background-size: 16px;
+    background-clip: text;
+    color: transparent;  
+    mix-blend-mode: darken;
   }
-  a { 
+  .block {
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 255px 1px 219px 1px/1px 194px 1px 247px;
+    border-image: url('../images/pencil.jpg') 5 round;
+  }
+  .card {
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 255px 1px 219px 1px/1px 194px 1px 247px;
+    border-image: url('../images/pencil.jpg') 5 round;
+  }
+  a:not(.gatsby-resp-image-link) { 
     text-decoration: none;
-    background:
-      linear-gradient(
-        to bottom, $arty-highlight-color 0%,
-        $arty-highlight-color 100%
-      );
-    background-position: 0% 100%;
+    padding: 0px 5px;
+    margin: 0px -5px;
+    background-image: url('../images/highlight.png');
+    background-position: 0% 60%;
     background-repeat: repeat-y;
     background-size: 0px 2px;
-    transition: background-size .2s;
+    transition: background-size .15s ease-out;
     background-blend-mode: multiply;
     color: $arty-black-color; 
     mix-blend-mode: multiply;
@@ -88,17 +118,41 @@ blockquote {
   background: $designy-background-color;
   color: white;
   .block {
-    border-radius: 24px;
-    background: #38333a;
-    box-shadow:  20px 20px 60px #252226, 
-                -20px -20px 60px #4b444e;
+    position: relative;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 24px;
+      background: #38333a;
+      box-shadow:  20px 20px 60px #211e22, -20px -20px 60px #58505c;
+      filter: blur(2px);
+    }
   }
   .card {
     border-radius: 12px;
     background: #fff;
-    box-shadow:  10px 10px 20px #252226, 
-                -10px -10px 20px #4b444e;
+    position: relative;
+    z-index: 1;
     margin: 20px 0px;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 24px;
+      background: #38333a;
+      box-shadow:  20px 20px 60px #211e22, -20px -20px 60px #58505c;
+      filter: blur(2px);
+    }
   }
   a { 
     background: $designy-purple-gradient;
@@ -152,13 +206,18 @@ header {
 
   #logo > a, nav > a {
     font-family: $header-font-stack;
-    font-size: $h1-font-size;
+    font-size: $h3-font-size;
     text-decoration: none;
     font-weight: bold;
   }
   #desktop-nav {
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-medium) {
       display: none;
+    }
+    a {
+      &:not(:last-child) {
+        margin-right: 1.2rem;
+      }
     }
   }
   #mobile-nav {
@@ -169,7 +228,10 @@ header {
     }
     #mobile-hamburger {
       position: absolute;
-      right: 0;
+      right: 2rem;
+      @media screen and (max-width: $break-small) {
+        right: 1rem;
+      }
       z-index: 10;
     }
     .menu {
@@ -185,16 +247,11 @@ header {
       justify-content: space-evenly;
       background: white;
     }
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-medium) {
       display: block;
     }
   }
-  nav > a {
-    font-weight: 300;
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
-  }
+  
   &.arty {
     background: transparent;
   }
@@ -211,6 +268,13 @@ header {
     }
   }
   
+}
+
+/* Footer */
+footer {
+  margin: auto;
+  text-align: center;
+  padding: $gutter-size;
 }
 
 /* Home Page */
@@ -258,6 +322,11 @@ header {
       background: white;
       min-height: 50px;
       padding: 1rem 1rem;
+      .blog-title {
+        display: inline;
+        font-size: $h5-font-size;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -265,6 +334,11 @@ header {
 .blog-post-container {
   max-width: 960px;
   margin: auto;
+  .block {
+    @media screen and (min-width: $break-medium) {
+      padding: 3rem;
+    }
+  }
   .blog-post-title {
     font-size: 2.488rem;
     margin-bottom: 0.5rem;
@@ -294,7 +368,6 @@ header {
 
 .arty {
   .blog-card {
-    outline: 1px solid grey;
     mix-blend-mode: multiply;
     .blog-card-img {
       filter: grayscale(0.5);
@@ -305,10 +378,14 @@ header {
         text-decoration: none;
       }
       .badge {
-        color: white;
-        background: lightgrey;
+        color: $arty-black-color;
+        background-image: url('../images/highlight.png');
+        background-position: 0% 60%;
+        background-repeat: repeat-y;
+        background-size: 100% 50px;
+        filter: hue-rotate(280deg) saturate(0.7);
         &:hover {
-          background: grey;
+          filter: hue-rotate(280deg) saturate(1);
         }
       }
     }

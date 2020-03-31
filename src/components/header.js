@@ -13,11 +13,11 @@ const Header = ({ siteTitle, theme }) => {
         </h1>
       </div>
       <nav id="desktop-nav">
-        <Link to="/art">ART</Link>
-        <Link to="/design">DESIGN</Link>
-        <Link to="/blog">BLOG</Link>
-        <Link to="/about">ABOUT</Link>
-        <Link to="/contact">CONTACT</Link>
+        <Link to="/art">Art</Link>
+        <Link to="/design">Design</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
       </nav>
       <nav id="mobile-nav" class={showNavMenu ? "fixed" : ""}>
         <div 

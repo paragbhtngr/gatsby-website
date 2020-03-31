@@ -1,0 +1,37 @@
+/* COLORS */
+$codey-background-color: #272822;
+$codey-red-color: #F92672;
+$codey-orange-color: #FD971F;
+$codey-yellow-color: #FFD866;
+$codey-green-color: #A6E22E;
+$codey-blue-color: #66D9EF;
+$codey-purple-color: #AE81FF;
+
+$arty-background-color: #ffffff;
+$arty-background-image: url('../images/craft-paper.jpg');
+$arty-highlight-color: #ff4a96;
+$arty-black-color: #3a3a3a;
+
+$designy-background-color: #38333a;
+$designy-background-gradient: linear-gradient(to bottom, #38333a 0%, #211420 100%); 
+$designy-purple-gradient: linear-gradient(to right, #c074ca 0%, #c964bb 100%);
+$designy-pink-gradient: linear-gradient(to right,  #ff4a96 0%, #ff21bc 100%);
+$designy-text-shadow: 0px 5px 15px rgba(225,0,255,0.30);
+
+/* FONTS */
+$header-font-stack: 'Barlow', 'Roboto', sans-serif;
+$body-font-stack: 'Roboto', sans-serif;
+
+$h1-font-size: 2.488rem;
+$h2-font-size: 2.074rem;
+$h3-font-size: 1.728rem;
+$h4-font-size: 1.44rem;
+$h5-font-size: 1.2rem;
+$h6-font-size: 1rem;
+$p-font-size: 1rem;
+
+$gutter-size: 2rem;
+
+$break-small: 480px;
+$break-medium: 780px;
+$break-large: 960px;

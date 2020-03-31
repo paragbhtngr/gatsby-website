@@ -33,7 +33,7 @@ const Layout = ({ children, theme }) => {
           {children}
         </main>
         <footer>
-          © {new Date().getFullYear()}, Parag Bhatnagar
+          © {new Date().getFullYear()}, Parag Bhatnagar | Personal Website
         </footer>
       </div>
     </>
