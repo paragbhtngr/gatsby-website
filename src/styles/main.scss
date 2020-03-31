@@ -83,20 +83,20 @@ blockquote {
     box-sizing: border-box;
     border-width: 2px;
     border-style: solid;
-    border-radius: 255px 1px 219px 1px/1px 194px 1px 247px;
     border-image: url('../images/pencil.jpg') 5 round;
+    border-radius: 255px 1px 219px 1px/1px 194px 1px 247px;
   }
   .card {
     box-sizing: border-box;
     border-width: 2px;
     border-style: solid;
-    border-radius: 255px 1px 219px 1px/1px 194px 1px 247px;
     border-image: url('../images/pencil.jpg') 5 round;
+    border-radius: 255px 1px 219px 1px/1px 194px 1px 247px;
   }
   a:not(.gatsby-resp-image-link) { 
     text-decoration: none;
     padding: 0px 5px;
-    margin: 0px -5px;
+    margin: 0px -9px;
     background-image: url('../images/highlight.png');
     background-position: 0% 60%;
     background-repeat: repeat-y;
@@ -187,6 +187,7 @@ blockquote {
 
 
 main {
+  position: relative;
   min-height: 100vh;
   padding: $gutter-size;
   @media screen and (max-width: $break-small) {
@@ -203,7 +204,9 @@ header {
   justify-content: space-between;
   background-color: transparent;
   margin-bottom: 2rem;
-
+  #logo {
+    width: 225px;
+  }
   #logo > a, nav > a {
     font-family: $header-font-stack;
     font-size: $h3-font-size;
@@ -363,6 +366,9 @@ footer {
       margin-bottom: 1.5rem;
       line-height: 1.5;
     }
+    .gatsby-resp-image-wrapper {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -447,3 +453,25 @@ footer {
     border: 1px solid grey;
   }
 } 
+
+/* Background */
+#site-bg {
+  position: absolute;
+  z-index: 0;
+  padding: $gutter-size;
+  height: 100%;
+  overflow: hidden;
+  @media screen and (max-width: $break-small) {
+    padding: 0.5*$gutter-size;
+  }
+  &.codey {
+    opacity: 0.08;
+    .code-green {
+      margin-top: 3.5rem;
+      color: lime;
+      font-family: monospace;
+      white-space: pre-wrap;
+      filter: blur(3px);
+    }
+  }
+}
