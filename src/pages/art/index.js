@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../../components/layout"
+import Image from "../../components/image"
 import SEO from "../../components/seo"
 
 import { myContext } from '../../../provider'
@@ -16,13 +17,22 @@ export default function Blog({
       {context => (
         <Layout theme={context.theme}>
           <SEO title="Art" />
-          <h1>Hi from the about page</h1>
-          <div className="blog-post-container">
+          <h1>Drawings, Doodles, and Illustrations</h1>
+          <div className="blog-posts-container">
             { posts.map(post => {
               return (
                 <>
-                  <div className="blog-post">
-                    <h2>{post.frontmatter.title}</h2>
+                  <div className="blog-card card">
+                    <div className="blog-card-img">
+                      {post.frontmatter.images && <Image imgName={post.frontmatter.images[0]}/>}
+                    </div>
+                    <div className="blog-card-content">
+                      <Link to={post.frontmatter.path} className="blog-title">
+                        {post.frontmatter.title}
+                      </Link>
+                      <br/>
+                    </div>
+                    
                   </div>
                 </>
               )
@@ -48,6 +58,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             path
+            images
           }
         }
       }
