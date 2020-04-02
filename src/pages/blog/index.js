@@ -23,11 +23,11 @@ export default function Blog({
               return (
                 <>
                   <div className="blog-card card">
-                    <div className="blog-card-img">
+                    <div className="card-img">
                       <Image imgName={post.frontmatter.image}/>
                     </div>
-                    <div className="blog-card-content">
-                      <Link to={post.frontmatter.path} className="blog-title">
+                    <div className="card-content">
+                      <Link to={post.frontmatter.path} className="title">
                         {post.frontmatter.title}
                       </Link>
                       <br/>

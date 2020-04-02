@@ -18,16 +18,16 @@ export default function Blog({
         <Layout theme={context.theme}>
           <SEO title="Design" />
           <h1>Design</h1>
-          <div className="blog-posts-container">
+          <div className="design-posts-container">
             { posts.map(post => {
               return (
                 <>
-                  <div className="blog-card card">
-                    <div className="blog-card-img">
+                  <div className="design-card card">
+                    <div className="card-img">
                       {post.frontmatter.images && <Image imgName={post.frontmatter.images[0]}/>}
                     </div>
-                    <div className="blog-card-content">
-                      <Link to={post.frontmatter.path} className="blog-title">
+                    <div className="card-content">
+                      <Link to={post.frontmatter.path} className="title">
                         {post.frontmatter.title}
                       </Link>
                       <br/>
