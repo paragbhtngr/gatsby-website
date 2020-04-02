@@ -45,6 +45,10 @@ module.exports = {
             options: {
               maxWidth: 1200,
             },
+          }, 
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: {figureClassName: 'md-figure'},
           },
         ],
       },

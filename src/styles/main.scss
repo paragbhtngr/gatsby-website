@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;700&family=Roboto:wght@400;900&display=swap');
 @import 'themes';
 
 
@@ -198,6 +198,10 @@ blockquote {
   }
   em {
     color: $codey-green-color;
+  }
+  strong {
+    font-weight: bold;
+    color: $codey-red-color;
   }
   
 }
@@ -446,6 +450,16 @@ footer {
     p {
       margin-bottom: 1.5rem;
       line-height: 1.5;
+    }
+    img {
+      max-width: 100%;
+    }
+    figure {
+      text-align: center;
+    }
+    figcaption {
+      font-size: 0.85*$h6-font-size;
+      opacity: 0.6;
     }
     .gatsby-resp-image-wrapper {
       margin-bottom: 1rem;
