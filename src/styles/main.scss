@@ -40,8 +40,9 @@ blockquote {
     content: open-quote;
     font-size: 4em;
     line-height: 0.1em;
-    margin-right: 0.25em;
+    margin-right: 0.1em;
     vertical-align: -0.4em;
+    font-family: $body-font-stack;
   }
   @media screen and (max-width: $break-small) {
     padding-left: 1rem;
@@ -127,7 +128,7 @@ blockquote {
     }
   }
   img {
-    mix-blend-mode: darken;
+    // mix-blend-mode: darken;
   }
 }
 
@@ -415,6 +416,13 @@ footer {
       padding: 20px;
       padding-bottom: 38px;
       width: calc(100% - 40px);
+      .design-bg {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 }
@@ -491,11 +499,21 @@ footer {
       }
     }
   }
+  .art-card .design-card {
+    .card-img {
+      mix-blend-mode: normal;
+      background: white;
+      .gatsby-image-wrapper, img {
+        mix-blend-mode: normal;
+      }
+    }
+  }
 }
 
 .designy {
   .blog-card, .art-card, .design-card {
     .card-img {
+      border-radius: 12px;
       .gatsby-image-wrapper {
         border-radius: 12px;
       }

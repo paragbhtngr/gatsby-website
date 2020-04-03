@@ -6,6 +6,7 @@ title: "Volvox"
 medium: "Digital"
 images:
 - volvox.png
+backgroundImage: volvox-bg.jpg
 ---
 
 Logo design for a startup working with decentralized insurance technology. The name and design of the logo came from having decentralization as the core principle of the projects being worked on. I thought of the name Volvox recalling a picture and caption in a biology textbook I had read decades ago. A volvox colony is a cluster of single-celled eukaryotic algae functioning together with a sort of hive mind, behaving like one large organism - also the name Man o' War probably wasn't appropriate for the company. In a lot of ways, Volvox was a good biological analogy for what we were trying to do with the company, and it had a strong, crisp sounding name. So that's the direction in which we went.

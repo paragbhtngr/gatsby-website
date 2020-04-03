@@ -6,6 +6,7 @@ title: "The Flying Fido"
 medium: "Digital"
 images:
 - flyingfido.png
+backgroundImage: flyingfido-bg.jpg
 ---
 
 Possibly one of my favorite projects to work on in recent memory, The Flying Fido is a pet relocation service to help you transport your pets from one country to another, making the entire process hassle-free.

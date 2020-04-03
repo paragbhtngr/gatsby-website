@@ -5,7 +5,8 @@ date: "2018-04-15"
 title: "Alchemy - A Yale-NUS Literary Collective"
 medium: "Digital"
 images:
-- alchemy.png
+- alchemy-white.png
+backgroundImage: alchemy-bg.jpg
 ---
 
 Alchemy was a Literary Collective that would share poems, short stories, art and other creative projects by Yale-NUS students. Given that it was a literary collective, I really wanted the logo to be a logotype, instead of it being iconographic or graphic-heavy, I wanted to let the text do most of the heavy lifting.

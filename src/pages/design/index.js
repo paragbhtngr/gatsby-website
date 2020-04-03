@@ -23,7 +23,10 @@ export default function Blog({
               return (
                 <>
                   <div className="design-card card">
-                    <div className="card-img">
+                    <div className="card-img" style={{
+                      backgroundColor: post.frontmatter.backgroundColor || 'white'
+                    }}>
+                      {post.frontmatter.backgroundImage && <Image className="design-bg" imgName={post.frontmatter.backgroundImage}/>}
                       {post.frontmatter.images && <Image imgName={post.frontmatter.images[0]}/>}
                     </div>
                     <div className="card-content">
@@ -59,6 +62,8 @@ export const pageQuery = graphql`
             title
             path
             images
+            backgroundImage
+            backgroundColor
           }
         }
       }
